@@ -109,14 +109,14 @@ else if( str1=="cd" && words.size()==1){
       cout<<" unable to find entered path name" << endl;}
   }
     else {
-    int res=chdir(path_name);                 // change directory with relative path_name 
-    char* new_dir = new char[100];
+      int res=chdir(path_name);                 // change directory with relative path_name 
+      char* new_dir = new char[100];
    
-    getcwd(new_dir,100);
-     if(res==0){ 
-       directory = string(new_dir);}
-     else{
-       cout <<" unable to find entered path name" << endl;}
+      getcwd(new_dir,100);
+      if(res==0){ 
+        directory = string(new_dir);}
+      else{
+        cout <<" unable to find entered path name" << endl;}
  
 } 
  }
@@ -134,7 +134,7 @@ else if( str1=="cd" && words.size()==1){
  }
  else if(str1!=""){
    int len = words.size();
-    back='a';
+   back='a';
    if(len!=0){
      if(words[len-1][0]=='&'){
        back ='&';words.pop_back();}}
@@ -160,12 +160,12 @@ else if( str1=="cd" && words.size()==1){
    if(id==0){
  
   
-  char* path = getenv("PATH");
-  char* env[] = {path,NULL};
+    char* path = getenv("PATH");
+    char* env[] = {path,NULL};
   
-  execvpe(program,param,env);            // execute program 
+    execvpe(program,param,env);            // execute program 
     if(str1!="bye" && str1!="")    
-     cout << " command or program do not exist" << endl;
+      cout << " command or program do not exist" << endl;
    }
  
 }
@@ -173,7 +173,7 @@ else if( str1=="cd" && words.size()==1){
   else {
    if(str1!="bye" &&str1!="")
     cout << " invalid syntax line" << endl;
-}
+ }
 }
 return 0;
 
